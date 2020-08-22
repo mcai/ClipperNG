@@ -8,4 +8,4 @@ include_directories(.)
 add_executable(ClipperNG
         clipper.cpp
         clipper.hpp
-        clipper_console_demo.cpp)
+        main.cpp)
