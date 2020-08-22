@@ -293,12 +293,37 @@ bool ASCII_icompare(const char* str1, const char* str2)
   return (!*str2);
 }
 
+void run_minkowski_sum()
+{
+    cout << "running minkowski sum" << endl;
+
+    Path first(4);
+    first[0] = IntPoint(0, 0);
+    first[1] = IntPoint(0, 10);
+    first[2] = IntPoint(10, 10);
+    first[3] = IntPoint(10, 0);
+
+    Path second(4);
+    second[0] = IntPoint(0, 0);
+    second[1] = IntPoint(0, 10);
+    second[2] = IntPoint(10, 10);
+    second[3] = IntPoint(10, 0);
+
+    Paths solution;
+
+    MinkowskiSum(first, second, solution, true);
+
+    cout << "done running minkowski sum" << endl;
+}
+
 //------------------------------------------------------------------------------
 // Main entry point ...
 //------------------------------------------------------------------------------
 
 int main(int argc, char* argv[])
 {
+    run_minkowski_sum(); // call run_minkowski_sum();
+
   if (argc > 1 &&
     (strcmp(argv[1], "-b") == 0 || strcmp(argv[1], "--benchmark") == 0))
   {
